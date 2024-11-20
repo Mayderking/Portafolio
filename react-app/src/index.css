@@ -8,3 +8,13 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background-color: #0c0b1f;
 }
+
+.justify{
+  text-align: justify;
+}
+
+@layer base {
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+}

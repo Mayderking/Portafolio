@@ -1,32 +1,46 @@
+import React from "react";
 import { Link } from "react-scroll";
 import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
     <header>
-      <div className="container flex justify-between max-w-6xl mx-auto md-flex">
+      <div className="container justify-between max-w-6xl mx-auto md:flex">
         <Link href="/">
-          <h1 className=" my-3 text-4xl font-bold text-center md:text-left text-primary">
-            Santiago Grisales
-            <span className="text-secondary">.</span>
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className=" my-3 text-4xl font-bold text-center md:text-left text-gray-200"
+          >
+            Santi
+            <span className="text-green-400">.</span>
+          </motion.h1>
         </Link>
-        <div className="flex items-center justify-center gap-7">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="flex items-center justify-center gap-7"
+        >
           <a
             href="https://github.com/Mayderking"
-            className="transition-all duration-300 text-primary hover:text-secondary"
+            className="transition-all duration-300 text-gray-200 hover:text-green-400"
             target="_blank"
           >
             <AiOutlineGithub className="size-10" />
           </a>
           <a
-            href="https://instagram.com"
-            className="transition-all duration-300 text-primary hover:text-secondary"
+            href="https://www.instagram.com/_santi_grisales/"
+            className="transition-all duration-300 text-gray-200 hover:text-green-400"
             target="_blank"
           >
             <AiOutlineInstagram className="size-10" />
           </a>
-        </div>
+        </motion.div>
       </div>
     </header>
   );
