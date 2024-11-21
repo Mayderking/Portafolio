@@ -1,6 +1,6 @@
 import { VscAccount, VscBook, VscChecklist } from "react-icons/vsc";
-import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   return (
@@ -14,12 +14,12 @@ const Navbar = () => {
       >
         <ul className="flex gap-5 z-10 cursor-pointer">
           <li className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-green-400">
-            <Link to="habilidades" smooth={true} duration={500}>
+            <Link to="Home" smooth={true} duration={500}>
               <VscAccount className="size-8" />
             </Link>
           </li>
           <li className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-green-400">
-            <Link to="Acerca" smooth={true} duration={500}>
+            <Link to="Services" smooth={true} duration={500}>
               <VscBook className="size-8" />
             </Link>
           </li>

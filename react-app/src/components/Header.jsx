@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Header = () => {
   return (
     <header>
-      <div className="container justify-between max-w-6xl mx-auto md:flex">
+      <div className="container justify-between max-w-6xl mx-auto md:flex" id="Home">
         <Link href="/">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}

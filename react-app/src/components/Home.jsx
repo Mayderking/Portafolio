@@ -1,24 +1,18 @@
 import React from "react";
-import Profile from "../assets/photo.png";
+import Profile from "../assets/image.png";
 import { motion } from "framer-motion";
 import {
   DiHtml5,
   DiCss3,
   DiJavascript1,
-  DiRubyRough,
-  DiRor,
   DiPython,
   DiDjango,
-  DiPhp,
-  DiLaravel,
-  DiIllustrator,
-  DiPhotoshop,
   DiReact,
 } from "react-icons/di";
 
 const Home = () => {
   return (
-    <div className="mt-8 max-w-[1200px] mx-auto relative">
+    <div className="mb-[300px] mt-[100px] max-w-[1200px] mx-auto relative">
       <div className="flex flex-col md:flex-row placer-items-center gap-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -63,41 +57,47 @@ const Home = () => {
           </motion.div>
         </motion.div>
         <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] mx-auto">
-          <motion.svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 506 506"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.circle
-              cx="253"
-              cy="253"
-              r="253"
-              stroke="#00ff99"
-              strokeWidth="4"
-              fill="none"
-              strokeLinejoin="round"
-              initial={{ opacity: 0, strokeDasharray: "24 10 0 0" }}
-              whileInView={{ opacity: 1 }}
+          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] mx-auto">
+            <motion.svg
+              className="absolute inset-0 w-full h-full"
+              viewBox="0 0 506 506"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.circle
+                cx="253"
+                cy="253"
+                r="253"
+                stroke="#00ff99"
+                strokeWidth="4"
+                fill="none"
+                strokeLinejoin="round"
+                initial={{ opacity: 0, strokeDasharray: "24 10 0 0" }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                animate={{
+                  strokeDasharray: [
+                    "15 120 25 25",
+                    "16 25 92 72",
+                    "4 250 22 22",
+                  ],
+                  rotate: [120, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            </motion.svg>
+            <motion.img
+              src={Profile}
+              className="absolute inset-0 w-full h-full rounded-full object-cover"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              animate={{
-                strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-                rotate: [120, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
+              transition={{ duration: 1, delay: 0.5 }}
             />
-          </motion.svg>
-          <motion.img
-            src={Profile}
-            className="absolute inset-0 w-full h-full rounded-full object-cover"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
+          </div>
         </div>
       </div>
     </div>

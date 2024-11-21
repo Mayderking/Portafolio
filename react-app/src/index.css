@@ -17,4 +17,11 @@ body {
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
   }
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #4ade80;
+  }
 }
