@@ -1,4 +1,3 @@
-import React from "react";
 import Profile from "../assets/image.png";
 import { motion } from "framer-motion";
 import {

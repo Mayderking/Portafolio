@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-scroll";
 import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { motion } from "framer-motion";

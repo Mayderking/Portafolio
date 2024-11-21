@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { VscArrowRight } from "react-icons/vsc";
 import work1 from "../assets/brawlhalla.png";
@@ -47,7 +46,10 @@ const Services = () => {
     >
       <div className="container mx-auto text-gray-200">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
           animate={{
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },

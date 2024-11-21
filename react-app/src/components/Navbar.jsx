@@ -1,4 +1,3 @@
-import React from "react";
 import { VscAccount, VscBook, VscChecklist } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
@@ -25,7 +24,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-green-400">
-            <Link to="contact" smooth={true} duration={500}>
+            <Link to="Contact" smooth={true} duration={500}>
               <VscChecklist className="size-8" />
             </Link>
           </li>
