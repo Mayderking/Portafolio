@@ -12,7 +12,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="mb-[300px] mt-[100px] max-w-[1200px] mx-auto relative">
+    <div className="mb-[200px] mt-[100px] max-w-[1200px] mx-auto relative">
       <div className="flex flex-col md:flex-row placer-items-center gap-8">
         <motion.div
           initial={{ opacity: 0, y: -50 }}

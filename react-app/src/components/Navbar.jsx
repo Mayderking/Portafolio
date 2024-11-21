@@ -1,3 +1,4 @@
+import React from "react";
 import { VscAccount, VscBook, VscChecklist } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
@@ -9,8 +10,8 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1, delay:0.5}}
-        className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-gray-200/15 backdrop-blur-sm text-gray-200"
+        transition={{ duration: 1, delay: 0.5 }}
+        className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-blue-950/30 backdrop-blur-sm text-gray-200"
       >
         <ul className="flex gap-5 z-10 cursor-pointer">
           <li className="px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-green-400">
