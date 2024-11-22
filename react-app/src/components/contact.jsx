@@ -16,98 +16,91 @@ const contact = [
 
 const Contact = () => {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
-      className="py-[70px] px-4 "
+      className="container mx-auto max-w-screen-lg pt-20 pb-10 px-4" // Ajuste del contenedor principal
+      id="Contact"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row items-center ">
-          <div className="xl:h-[54%] order-1 xl:order-none">
-            <div className="text-gray-200 xl:w-[500px] px-6 pt-20" id="Contact">
-              <h3 className="text-4xl text-green-400 pb-8 text-center">
-                Sobre mi
-              </h3>
-              <p className="text-[20px] pb-4 text-center ">
-                Soy un desarrollador con experiencia en programación web,
-                especializado en tecnologías como React, Tailwind y Django. Me
-                destaco por crear interfaces modernas y responsivas, optimizando
-                la experiencia del usuario. Además, cuento con habilidades
-                personales como adaptabilidad y comunicación efectiva, lo que me
-                permite colaborar en proyectos complejos y cumplir objetivos con
-                eficiencia.
-              </p>
-            </div>
-          </div>
-          <div className="xl:h-[54%] order-3 xl:order-none">
-            <form
-              action="https://getform.io/f/awnnydyb"
-              method="POST"
-              className="text-gray-200 flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-            >
-              <h3 className="text-4xl text-green-400">contactame!</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                  type="firstname"
-                  name="firstname"
-                  placeholder="Firstname"
-                  className="flex h-[48px] rounded-md border border-white/10 focus:border-green-400 font-light bg-gray-800 px-4 py-5 text-base placeholder:text-white/60 outline-none"
-                />
-                <input
-                  type="lastname"
-                  name="lastname"
-                  placeholder="Lastname"
-                  className="flex h-[48px] rounded-md border border-white/10 focus:border-green-400 font-light bg-gray-800 px-4 py-5 text-base placeholder:text-white/60 outline-none"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email address"
-                  className="flex h-[48px] rounded-md border border-white/10 focus:border-green-400 font-light bg-gray-800 px-4 py-5 text-base placeholder:text-white/60 outline-none"
-                />
-                <input
-                  type="phone"
-                  name="phone"
-                  placeholder="Phone number"
-                  className="flex h-[48px] rounded-md border border-white/10 focus:border-green-400 font-light bg-gray-800 px-4 py-5 text-base placeholder:text-white/60 outline-none"
-                />
-              </div>
-              <textarea
-                  type="textarea"
-                  name="textarea"
-                  className="h-[230px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-gray-800 px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-400 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-53"
-                  placeholder="Type your message here."
-                />
-              <button
-                type="submit"
-                className="size-md max-w-40 bg-green-400 rounded-md text-gray-800 hover:bg-green-600 transition-all duration-400"
+      {/* Grid principal */}
+      <div className="grid md:grid-cols-2 gap-16 place-items-center">
+        {/* Sobre mí */}
+        <div className="text-gray-200">
+          <h3 className="text-4xl text-green-400 pb-6 text-center md:text-left">
+            Sobre mí
+          </h3>
+          <p className="leading-7 text-center md:text-justify px-2 md:px-0">
+            Soy un desarrollador con experiencia en programación web,
+            especializado en tecnologías como React, Tailwind y Django. Me
+            destaco por crear interfaces modernas y responsivas, optimizando la
+            experiencia del usuario. Además, cuento con habilidades personales
+            como adaptabilidad y comunicación efectiva, lo que me permite
+            colaborar en proyectos complejos y cumplir objetivos con eficiencia.
+          </p>
+        </div>
+
+        {/* Contactos */}
+        <div className="flex flex-col gap-6 text-gray-200 w-full">
+          <ul className="flex flex-col gap-6 items-center md:items-start">
+            {contact.map((item, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-4 w-full max-w-md bg-gray-800 rounded-lg p-4"
               >
-                Send message
-              </button>
-            </form>
-          </div>
-          <div className="flex-1 flex items-center px-[20px] xl:justify-center order-2 xl:order-none mb-8 xl:mb-0 text-gray-200">
-            <ul className="flex flex-col gap-10">
-              {contact.map((item, index) => {
-                return (
-                  <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72] bg-[#27272c] text-green-400 rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                    <div>
-                      <p>{item.title}</p>
-                      <h3>{item.description}</h3>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                <div className="w-14 h-14 bg-[#27272c] text-green-400 rounded-full flex items-center justify-center">
+                  <div className="text-[28px]">{item.icon}</div>
+                </div>
+                <div>
+                  <p className="font-bold text-lg">{item.title}</p>
+                  <h3 className="text-gray-400">{item.description}</h3>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </motion.section>
+
+      {/* Formulario */}
+      <form
+        action="https://getform.io/f/awnnydyb"
+        method="POST"
+        className="w-full max-w-md mx-auto mt-10 text-gray-200"
+      >
+        <p className="text-green-400 font-bold text-xl mb-4 text-center">
+          ¡Contáctame!
+        </p>
+        <input
+          type="text"
+          id="name"
+          placeholder="Tu nombre..."
+          name="name"
+          className="mb-4 w-full rounded-md border bg-gray-800 border-gray-600 focus:border-green-400 font-light placeholder:text-gray-500 outline-none py-2 pl-4"
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="Tu correo..."
+          name="email"
+          className="mb-4 w-full rounded-md border bg-gray-800 border-gray-600 focus:border-green-400 font-light placeholder:text-gray-500 outline-none py-2 pl-4"
+        />
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="4"
+          placeholder="Tu mensaje..."
+          className="w-full mb-4 rounded-md border bg-gray-800 border-gray-600 focus:border-green-400 font-light placeholder:text-gray-500 outline-none py-2 pl-4"
+        />
+        <button
+          type="submit"
+          className="w-full py-3 bg-green-400 rounded-md text-gray-800 hover:bg-green-600 transition-all duration-300 font-semibold text-lg"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+    </motion.div>
   );
 };
 

@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Home from "./components/Home.jsx";
 import Services from "./components/Services.jsx";
-import Contact2 from "./components/contact2.jsx";
+import Contact from "./components/contact.jsx";
 import Footer from "./components/footer.jsx";
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       <Navbar />
       <Home />
       <Services />
-      <Contact2 />
+      <Contact />
       <Footer />
     </>
   );
