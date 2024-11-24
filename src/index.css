@@ -8,6 +8,16 @@ body {
   background-color: #0c0b1f;
 }
 
+#tsparticles {
+  position: fixed; /* Fijar las partículas al fondo */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Coloca las partículas detrás del contenido */
+}
+
+
 @layer base {
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
